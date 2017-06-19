@@ -12,19 +12,9 @@ enum Player: String {
 
 var availableMoves: [Int] = [1,2,3,4,5,6,7,8,9]
 
-var currentPlayer: Player = .notSet
+var currentPlayer: Player = .o
 
-var currentBoardMoves: [Int: Player] = [:] {
-    didSet {
-        if currentPlayer == .notSet {
-            currentPlayer = .o
-        } else {
-            currentPlayer = currentPlayer == .o ? .x : .o
-        }
-    }
-}
-
-currentBoardMoves = [1,2,3,4,5,6,7,8,9].reduce([:]) { result, int in
+var currentBoardMoves: [Int: Player] = [1,2,3,4,5,6,7,8,9].reduce([:]) { result, int in
     var newResult = result
     newResult[int] = .notSet
     return newResult
@@ -40,8 +30,7 @@ var currentBoard: String {
     let seven = currentBoardMoves[7]!
     let eight = currentBoardMoves[8]!
     let nine = currentBoardMoves[9]!
-    return
-        "Current Board\n" +
+    return "Current Board\n" +
         " ---|---|---\n" +
         "  \(one.rawValue)   \(two.rawValue)   \(three.rawValue) \n" +
         " ---|---|---\n" +
@@ -57,6 +46,17 @@ let referenceBoard = "Reference Board\n" +
     "   4   5   6 \n" +
     "  ---|---|---\n" +
     "   7   8   9  \n"
+
+let possibleWins: [(Int, Int, Int)] = [
+    (1,2,3),
+    (1,4,7),
+    (1,5,9),
+    (4,5,6),
+    (7,8,9),
+    (2,5,8),
+    (3,6,9),
+    (3,5,7),
+]
 
 func askForMove() -> Int {
     print("Available moves: \(availableMoves)")
@@ -113,64 +113,19 @@ func handlePossibleWin(for player: Player) {
 }
 
 func register(move: Int) {
-    let _currentPlayer = currentPlayer
+
     // Mark players move onto board
-    currentBoardMoves[move] = _currentPlayer
+    currentBoardMoves[move] = currentPlayer
+
     // Remove move from available moves
     availableMoves = availableMoves.filter { $0 != move }
 
-    handlePossibleWin(for: _currentPlayer)
+    handlePossibleWin(for: currentPlayer)
+
+    // Switch current player
+    currentPlayer = currentPlayer == .o ? .x : .o
 }
 
 func startNextMove() {
     startGame()
 }
-
-let possibleWins: [(Int, Int, Int)] = [
-    (1,2,3),
-    (1,4,7),
-    (1,5,9),
-    (4,5,6),
-    (7,8,9),
-    (2,5,8),
-    (3,6,9),
-    (3,5,7),
-]
-
-// MARK: - Program
-
-// Move 1
-startGame()
-register(move: askForMove())
-
-// Move 2
-startNextMove()
-register(move: askForMove())
-
-// Move 3
-startNextMove()
-register(move: askForMove())
-
-// Move 4
-startNextMove()
-register(move: askForMove())
-
-// Move 5
-startNextMove()
-register(move: askForMove())
-
-// Move 6
-startNextMove()
-register(move: askForMove())
-
-// Move 7
-startNextMove()
-register(move: askForMove())
-
-// Move 8
-startNextMove()
-register(move: askForMove())
-
-// Move 9
-startNextMove()
-register(move: askForMove())
