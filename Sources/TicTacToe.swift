@@ -47,7 +47,12 @@ let referenceBoard = "Reference Board\n" +
     "  ---|---|---\n" +
     "   7   8   9  \n"
 
-let possibleWins: [(Int, Int, Int)] = [
+
+typealias Move = Int
+typealias PossibleWin = (firstMove: Move, secondMove: Move, thirdMove: Move)
+typealias PossibleWins = [PossibleWin]
+
+var currentPossibleWins: PossibleWins = [
     (1,2,3),
     (1,4,7),
     (1,5,9),
@@ -88,8 +93,18 @@ func startGame() {
     print(currentBoard)
 }
 
+func updatePossibleWins() {
+    currentPossibleWins = currentPossibleWins.filter { possibleWin in
+        let players = [possibleWin.firstMove,
+                       possibleWin.secondMove,
+                       possibleWin.thirdMove].flatMap { currentBoardMoves[$0] }
+
+        return !(players.contains(.o) && players.contains(.x))
+    }
+}
+
 func handlePossibleWin(for player: Player) {
-    let possibeWinner: [(Int, Int, Int)] = possibleWins.reduce([]) { (result, tuple) in
+    let possibeWinner: PossibleWins = currentPossibleWins.reduce([]) { (result, tuple) in
         let playerForMove0 = currentBoardMoves[tuple.0]
         let playerForMove1 = currentBoardMoves[tuple.1]
         let playerForMove2 = currentBoardMoves[tuple.2]
@@ -110,6 +125,12 @@ func handlePossibleWin(for player: Player) {
         print(currentBoard)
         exit(0)
     }
+
+    if currentPossibleWins.isEmpty {
+        print("Stalemate!")
+        print(currentBoard)
+        exit(0)
+    }
 }
 
 func register(move: Int) {
@@ -119,6 +140,8 @@ func register(move: Int) {
 
     // Remove move from available moves
     availableMoves = availableMoves.filter { $0 != move }
+
+    updatePossibleWins()
 
     handlePossibleWin(for: currentPlayer)
 
