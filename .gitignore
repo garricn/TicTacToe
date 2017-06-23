@@ -8,5 +8,3 @@ build/
 *.xcsettings
 #*.xcworkspace
 xcuserdata
-.build/
-*.xcodeproj
