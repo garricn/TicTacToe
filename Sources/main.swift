@@ -1,38 +1,48 @@
+
 // MARK: - Program
+let controller = CommandLineInterfaceController(game: Game())
 
 // Move 1
-startGame()
-register(move: askForMove())
+controller.start()
+controller.register(move: controller.askForMove())
+controller.evaluateResult(for: controller.currentPlayer)
 
 // Move 2
-startNextMove()
-register(move: askForMove())
+controller.startNextMove()
+controller.register(move: controller.askForMove())
+controller.evaluateResult(for: controller.currentPlayer)
 
 // Move 3
-startNextMove()
-register(move: askForMove())
+controller.startNextMove()
+controller.register(move: controller.askForMove())
+controller.evaluateResult(for: controller.currentPlayer)
 
 // Move 4
-startNextMove()
-register(move: askForMove())
+controller.startNextMove()
+controller.register(move: controller.askForMove())
+controller.evaluateResult(for: controller.currentPlayer)
 
 // Move 5
-startNextMove()
-register(move: askForMove())
+controller.startNextMove()
+controller.register(move: controller.askForMove())
+controller.evaluateResult(for: controller.currentPlayer)
 
 // Move 6
-startNextMove()
-register(move: askForMove())
+controller.startNextMove()
+controller.register(move: controller.askForMove())
+controller.evaluateResult(for: controller.currentPlayer)
 
 // Move 7
-startNextMove()
-register(move: askForMove())
+controller.startNextMove()
+controller.register(move: controller.askForMove())
+controller.evaluateResult(for: controller.currentPlayer)
 
 // Move 8
-startNextMove()
-register(move: askForMove())
+controller.startNextMove()
+controller.register(move: controller.askForMove())
+controller.evaluateResult(for: controller.currentPlayer)
 
 // Move 9
-startNextMove()
-register(move: askForMove())
-
+controller.startNextMove()
+controller.register(move: controller.askForMove())
+controller.evaluateResult(for: controller.currentPlayer)
