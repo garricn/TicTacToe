@@ -87,6 +87,16 @@ class Game {
             return Game.Result.slatemate
         }
 
+        if currentPossibleWins.count == 1 {
+            let win = currentPossibleWins[0]
+            let moves = [win.firstMove, win.secondMove, win.thirdMove]
+            let players = moves.flatMap { markedPositions[$0] }.filter { $0 != .notSet }
+
+            if players.count == 2, players[0] != players[1] || players[0] != currentPlayer.swap {
+                return Game.Result.slatemate
+            }
+        }
+
         return Game.Result.onGoing
     }
 
