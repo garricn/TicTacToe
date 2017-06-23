@@ -55,7 +55,7 @@ class Game {
     }
 
     func startNextMove() {
-        currentPlayer = currentPlayer.swap
+        currentPlayer = currentPlayer.swapped
     }
 
     func register(selected position: Position) {
@@ -92,7 +92,7 @@ class Game {
             let moves = [win.firstMove, win.secondMove, win.thirdMove]
             let players = moves.flatMap { markedPositions[$0] }.filter { $0 != .notSet }
 
-            if players.count == 2, players[0] != players[1] || players[0] != currentPlayer.swap {
+            if players.count == 2, players[0] != players[1] || players[0] != currentPlayer.swapped {
                 return Game.Result.slatemate
             }
         }
@@ -100,9 +100,24 @@ class Game {
         return Game.Result.onGoing
     }
 
-    enum Result {
+    enum Result: Equatable {
         case winner(Player)
         case slatemate
         case onGoing
+
+        static func ==(lhs: Result, rhs: Result) -> Bool {
+            return lhs.hashValue == rhs.hashValue
+        }
+
+        var hashValue: Int {
+            switch self {
+            case .winner:
+                return 0
+            case .slatemate:
+                return 1
+            case .onGoing:
+                return 2
+            }
+        }
     }
 }

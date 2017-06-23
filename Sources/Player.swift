@@ -28,7 +28,7 @@ enum Player: Int {
         return "Player \(self.mark)"
     }
 
-    var swap: Player {
+    var swapped: Player {
         switch self {
         case .o:
             return .x
