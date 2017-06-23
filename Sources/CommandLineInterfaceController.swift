@@ -10,11 +10,9 @@ import Foundation
 
 final class CommandLineInterfaceController {
 
-    var currentPlayer: Player {
-        return game.currentPlayer
-    }
+    // MARK: - UI Elements
 
-    let referenceBoard: String = ""
+    private let referenceBoard: String = ""
         + "\nReference Board\n\n"
         + "  ---|---|---\n"
         + "   1   2   3 \n"
@@ -23,7 +21,7 @@ final class CommandLineInterfaceController {
         + "  ---|---|---\n"
         + "   7   8   9\n"
 
-    var currentBoard: String {
+    private var currentBoard: String {
         let positions = game.markedPositions
         let one = positions[1]!.mark
         let two = positions[2]!.mark
@@ -45,27 +43,41 @@ final class CommandLineInterfaceController {
         return string
     }
 
+    private let divider = "\n================\n"
+
     private let game: Game
 
-    init(game: Game) {
+    private var currentPlayer: Player {
+        return game.currentPlayer
+    }
+
+    init(game: Game = Game()) {
         self.game = game
     }
 
-    func start() {
-        print(referenceBoard)
-        print(currentBoard)
+    func startGame() {
+        print("START!")
+
+        while game.evaluateResult(for: currentPlayer) == .onGoing {
+            print(divider)
+            print(referenceBoard)
+            print(currentBoard)
+            register(move: askForMove())
+            evaluateResult(for: currentPlayer)
+            game.startNextMove()
+        }
+
+        defer {
+            print(divider)
+            evaluateResult(for: currentPlayer)
+        }
     }
 
-    func startNextMove() {
-        game.startNextMove()
-        start()
-    }
-
-    func askForMove() -> Int {
+    private func askForMove() -> Int {
         let openPositions = game.openPositions.sorted()
-        let playerName = game.currentPlayer.name
-        print("Open positions: \(openPositions)")
-        print("\(playerName), make your move:")
+        let playerName = currentPlayer.name
+        print("Open positions: \(openPositions)\n")
+        print("\(playerName), make your move:\n")
 
         let move = readLine()
 
@@ -83,23 +95,23 @@ final class CommandLineInterfaceController {
             return askForMove()
         }
 
-        let string = "\n\n================\n\n" + "\(playerName) picked: \(int!)\n"
+        let string = "\n\(playerName) picked: \(int!)\n"
         print(string)
         return int!
     }
 
-    func register(move: Move) {
+    private func register(move: Move) {
         game.register(selected: move)
     }
 
-    func evaluateResult(for player: Player) {
+    private func evaluateResult(for player: Player) {
         let result = game.evaluateResult(for: player)
         switch result  {
         case .slatemate:
             print(currentBoard.replacingOccurrences(of: "Current Board", with: "Stalemate Board!"))
             exit(0)
         case .winner(player):
-            print("\(player.name) won!")
+            print("\(player.name) won!\n")
             print(currentBoard)
             exit(0)
         default: break
