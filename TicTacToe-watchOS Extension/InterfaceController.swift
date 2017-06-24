@@ -53,6 +53,7 @@ final class InterfaceController: WKInterfaceController {
             }
         }
         bottomLabel.setText("Current Player: \(game.currentPlayer.mark)")
+        enableButtons()
     }
 
     private func mark(for player: Player) -> String {
@@ -142,11 +143,11 @@ final class InterfaceController: WKInterfaceController {
         didTap(positionButton: positionButtons[8])
     }
 
-    @IBAction func restart() {
+    @IBAction func didTapRestart() {
         gameOver = false
         game = Game()
         refresh()
         enableButtons()
-//        dismiss()
     }
+
 }

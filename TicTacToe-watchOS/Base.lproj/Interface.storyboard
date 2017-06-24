@@ -73,11 +73,11 @@
                             </items>
                         </group>
                     </items>
-                    <menu key="menu" id="odw-Y0-9g0">
+                    <menu key="menu" id="Q5Q-FC-Fy1">
                         <items>
-                            <menuItem title="Restart" icon="repeat" id="lef-Lv-jlC">
+                            <menuItem title="Restart" icon="repeat" id="y26-H4-BDS">
                                 <connections>
-                                    <action selector="restart" destination="AgC-eL-Hgc" id="MfT-lg-xfm"/>
+                                    <action selector="didTapRestart" destination="AgC-eL-Hgc" id="8eZ-Of-E5N"/>
                                 </connections>
                             </menuItem>
                         </items>
