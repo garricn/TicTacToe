@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TicTacToe_watchOS" customModuleProvider="target">
+                    <items>
+                        <label width="1" alignment="left" text="Current Player:" textAlignment="left" id="PPm-EG-7wC"/>
+                        <group width="1" alignment="center" verticalAlignment="center" id="BaK-fi-MKO">
+                            <items>
+                                <button alignment="center" verticalAlignment="center" title="        " id="Kuv-aa-xdN">
+                                    <connections>
+                                        <action selector="didTapButton1" destination="AgC-eL-Hgc" id="Lke-2m-z1c"/>
+                                    </connections>
+                                </button>
+                                <button alignment="center" verticalAlignment="center" title="        " id="Lyc-4H-5Wn">
+                                    <connections>
+                                        <action selector="didTapButton2" destination="AgC-eL-Hgc" id="IU1-JK-iAo"/>
+                                    </connections>
+                                </button>
+                                <button alignment="center" verticalAlignment="center" title="        " id="kOg-dn-lrd">
+                                    <connections>
+                                        <action selector="didTapButton3" destination="AgC-eL-Hgc" id="zPM-Ad-D5I"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="center" verticalAlignment="center" id="Mrs-Ro-eA4">
+                            <items>
+                                <button alignment="center" verticalAlignment="center" title="        " id="LpC-eH-KGK">
+                                    <connections>
+                                        <action selector="didTapButton4" destination="AgC-eL-Hgc" id="DL9-Fz-Xmq"/>
+                                    </connections>
+                                </button>
+                                <button alignment="center" verticalAlignment="center" title="        " id="3WH-hs-sbh">
+                                    <connections>
+                                        <action selector="didTapButton5" destination="AgC-eL-Hgc" id="enA-Yb-lfg"/>
+                                    </connections>
+                                </button>
+                                <button alignment="center" verticalAlignment="center" title="        " id="LSX-ej-3se">
+                                    <connections>
+                                        <action selector="didTapButton6" destination="AgC-eL-Hgc" id="ECs-R5-t70"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="center" verticalAlignment="center" id="Vde-Vn-cJS">
+                            <items>
+                                <button alignment="center" verticalAlignment="center" title="        " id="5fY-nM-QTs">
+                                    <connections>
+                                        <action selector="didTapButton7" destination="AgC-eL-Hgc" id="mQD-HW-1UM"/>
+                                    </connections>
+                                </button>
+                                <button alignment="center" verticalAlignment="center" title="        " id="m7B-vj-iHx">
+                                    <connections>
+                                        <action selector="didTapButton8" destination="AgC-eL-Hgc" id="YRe-tS-MAP"/>
+                                    </connections>
+                                </button>
+                                <button alignment="center" verticalAlignment="center" title="        " id="vZa-e2-Tw8">
+                                    <connections>
+                                        <action selector="didTapButton9" destination="AgC-eL-Hgc" id="jMn-Pb-DGH"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <menu key="menu" id="odw-Y0-9g0">
+                        <items>
+                            <menuItem title="Restart" icon="repeat" id="lef-Lv-jlC">
+                                <connections>
+                                    <action selector="restart" destination="AgC-eL-Hgc" id="MfT-lg-xfm"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="bottomLabel" destination="PPm-EG-7wC" id="Ixt-qN-tPM"/>
+                        <outlet property="button1" destination="Kuv-aa-xdN" id="uMh-Ku-B8r"/>
+                        <outlet property="button2" destination="Lyc-4H-5Wn" id="BbN-jQ-zjO"/>
+                        <outlet property="button3" destination="kOg-dn-lrd" id="mQ3-qi-b9X"/>
+                        <outlet property="button4" destination="LpC-eH-KGK" id="4Vr-OG-hK9"/>
+                        <outlet property="button5" destination="3WH-hs-sbh" id="t61-J1-M6w"/>
+                        <outlet property="button6" destination="LSX-ej-3se" id="qlT-mV-nv8"/>
+                        <outlet property="button7" destination="5fY-nM-QTs" id="lpD-Fo-oUU"/>
+                        <outlet property="button8" destination="m7B-vj-iHx" id="N7f-Fh-8pk"/>
+                        <outlet property="button9" destination="vZa-e2-Tw8" id="gC5-d5-3Ps"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+    </scenes>
+</document>
