@@ -33,6 +33,10 @@
 		60C476981EFD8E1400EEC00E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60C476961EFD8E1400EEC00E /* Main.storyboard */; };
 		60C4769D1EFD948600EEC00E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605DD7F71EFCB8FA00186A47 /* Game.swift */; };
 		60C4769E1EFD948600EEC00E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605DD7F81EFCB8FA00186A47 /* Player.swift */; };
+		60E838331EFE0B87005F9435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E838321EFE0B87005F9435 /* AppDelegate.swift */; };
+		60E838351EFE0B87005F9435 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E838341EFE0B87005F9435 /* ViewController.swift */; };
+		60E838381EFE0B87005F9435 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E838361EFE0B87005F9435 /* Main.storyboard */; };
+		60E8383A1EFE0B87005F9435 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60E838391EFE0B87005F9435 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +118,12 @@
 		60C476941EFD8E1400EEC00E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60C476971EFD8E1400EEC00E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60C476991EFD8E1400EEC00E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60E838301EFE0B87005F9435 /* TicTacToe-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TicTacToe-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		60E838321EFE0B87005F9435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		60E838341EFE0B87005F9435 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		60E838371EFE0B87005F9435 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		60E838391EFE0B87005F9435 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		60E8383B1EFE0B87005F9435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +155,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		60E8382D1EFE0B87005F9435 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -157,6 +174,7 @@
 				60C4768F1EFD8E1300EEC00E /* TicTacToe-macOS */,
 				6083FBF81EFDD45E005E3943 /* TicTacToe-watchOS */,
 				6083FC071EFDD45E005E3943 /* TicTacToe-watchOS Extension */,
+				60E838311EFE0B87005F9435 /* TicTacToe-tvOS */,
 				605DD7F01EFCB8E500186A47 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -169,6 +187,7 @@
 				60C4768E1EFD8E1300EEC00E /* TicTacToe-macOS.app */,
 				6083FBF71EFDD45E005E3943 /* TicTacToe-watchOS.app */,
 				6083FC031EFDD45E005E3943 /* TicTacToe-watchOS Extension.appex */,
+				60E838301EFE0B87005F9435 /* TicTacToe-tvOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -235,6 +254,18 @@
 				60C476991EFD8E1400EEC00E /* Info.plist */,
 			);
 			path = "TicTacToe-macOS";
+			sourceTree = "<group>";
+		};
+		60E838311EFE0B87005F9435 /* TicTacToe-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				60E838321EFE0B87005F9435 /* AppDelegate.swift */,
+				60E838341EFE0B87005F9435 /* ViewController.swift */,
+				60E838361EFE0B87005F9435 /* Main.storyboard */,
+				60E838391EFE0B87005F9435 /* Assets.xcassets */,
+				60E8383B1EFE0B87005F9435 /* Info.plist */,
+			);
+			path = "TicTacToe-tvOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +358,23 @@
 			productReference = 60C4768E1EFD8E1300EEC00E /* TicTacToe-macOS.app */;
 			productType = "com.apple.product-type.application";
 		};
+		60E8382F1EFE0B87005F9435 /* TicTacToe-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60E8383E1EFE0B87005F9435 /* Build configuration list for PBXNativeTarget "TicTacToe-tvOS" */;
+			buildPhases = (
+				60E8382C1EFE0B87005F9435 /* Sources */,
+				60E8382D1EFE0B87005F9435 /* Frameworks */,
+				60E8382E1EFE0B87005F9435 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TicTacToe-tvOS";
+			productName = "TicTacToe-tvOS";
+			productReference = 60E838301EFE0B87005F9435 /* TicTacToe-tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -361,6 +409,11 @@
 						DevelopmentTeam = Y642MFHN82;
 						ProvisioningStyle = Automatic;
 					};
+					60E8382F1EFE0B87005F9435 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = Y642MFHN82;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 605DD7E81EFCB8BF00186A47 /* Build configuration list for PBXProject "TicTacToe" */;
@@ -379,6 +432,7 @@
 				605DD7EE1EFCB8E500186A47 /* TicTacToe-CLI */,
 				605DD8031EFCB93500186A47 /* TicTacToe-iOS */,
 				60C4768D1EFD8E1300EEC00E /* TicTacToe-macOS */,
+				60E8382F1EFE0B87005F9435 /* TicTacToe-tvOS */,
 				6083FBF61EFDD45E005E3943 /* TicTacToe-watchOS */,
 				6083FC021EFDD45E005E3943 /* TicTacToe-watchOS Extension */,
 			);
@@ -419,6 +473,15 @@
 			files = (
 				60C476951EFD8E1400EEC00E /* Assets.xcassets in Resources */,
 				60C476981EFD8E1400EEC00E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60E8382E1EFE0B87005F9435 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60E8383A1EFE0B87005F9435 /* Assets.xcassets in Resources */,
+				60E838381EFE0B87005F9435 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +532,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		60E8382C1EFE0B87005F9435 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60E838351EFE0B87005F9435 /* ViewController.swift in Sources */,
+				60E838331EFE0B87005F9435 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -513,6 +585,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				60C476971EFD8E1400EEC00E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		60E838361EFE0B87005F9435 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60E838371EFE0B87005F9435 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1065,6 +1145,115 @@
 			};
 			name = Release;
 		};
+		60E8383C1EFE0B87005F9435 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Y642MFHN82;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "TicTacToe-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SwiftCoders.TicTacToe-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		60E8383D1EFE0B87005F9435 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Y642MFHN82;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "TicTacToe-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SwiftCoders.TicTacToe-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1102,6 +1291,7 @@
 				6083FC151EFDD45E005E3943 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6083FC181EFDD45E005E3943 /* Build configuration list for PBXNativeTarget "TicTacToe-watchOS" */ = {
 			isa = XCConfigurationList;
@@ -1110,6 +1300,7 @@
 				6083FC131EFDD45E005E3943 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		60C4769C1EFD8E1400EEC00E /* Build configuration list for PBXNativeTarget "TicTacToe-macOS" */ = {
 			isa = XCConfigurationList;
@@ -1119,6 +1310,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		60E8383E1EFE0B87005F9435 /* Build configuration list for PBXNativeTarget "TicTacToe-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60E8383C1EFE0B87005F9435 /* Debug */,
+				60E8383D1EFE0B87005F9435 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
