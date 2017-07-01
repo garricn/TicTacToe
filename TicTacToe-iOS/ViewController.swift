@@ -44,7 +44,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction private func didTapPositionButton(_ sender: UIButton) {
-        game.register(selected: sender.tag)
+        let position = sender.tag
+
+        guard game.openPositions.contains(position) else {
+            return
+        }
+
+        game.register(selected: position)
         setTitle(for: sender)
 
         let result = game.evaluateResult(for: game.currentPlayer)

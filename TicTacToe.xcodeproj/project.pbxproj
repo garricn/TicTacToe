@@ -16,7 +16,6 @@
 		605DD80C1EFCB93500186A47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 605DD80A1EFCB93500186A47 /* Main.storyboard */; };
 		605DD80E1EFCB93500186A47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 605DD80D1EFCB93500186A47 /* Assets.xcassets */; };
 		605DD8111EFCB93500186A47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 605DD80F1EFCB93500186A47 /* LaunchScreen.storyboard */; };
-		605DD8161EFCB93C00186A47 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605DD7F71EFCB8FA00186A47 /* Game.swift */; };
 		605DD8171EFCB93C00186A47 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605DD7F81EFCB8FA00186A47 /* Player.swift */; };
 		6083FBFB1EFDD45E005E3943 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6083FBF91EFDD45E005E3943 /* Interface.storyboard */; };
 		6083FBFD1EFDD45E005E3943 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6083FBFC1EFDD45E005E3943 /* Assets.xcassets */; };
@@ -27,6 +26,9 @@
 		6083FC111EFDD45E005E3943 /* TicTacToe-watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6083FBF71EFDD45E005E3943 /* TicTacToe-watchOS.app */; };
 		6083FC1A1EFDD9BC005E3943 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605DD7F71EFCB8FA00186A47 /* Game.swift */; };
 		6083FC1B1EFDD9C4005E3943 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605DD7F81EFCB8FA00186A47 /* Player.swift */; };
+		609893991F04AE150087C83C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605DD7F71EFCB8FA00186A47 /* Game.swift */; };
+		6098939A1F04AE150087C83C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605DD7F81EFCB8FA00186A47 /* Player.swift */; };
+		6098939B1F04AE3B0087C83C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605DD7F71EFCB8FA00186A47 /* Game.swift */; };
 		60C476911EFD8E1300EEC00E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C476901EFD8E1300EEC00E /* AppDelegate.swift */; };
 		60C476931EFD8E1300EEC00E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C476921EFD8E1300EEC00E /* ViewController.swift */; };
 		60C476951EFD8E1400EEC00E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60C476941EFD8E1400EEC00E /* Assets.xcassets */; };
@@ -505,8 +507,8 @@
 			files = (
 				605DD8171EFCB93C00186A47 /* Player.swift in Sources */,
 				605DD8091EFCB93500186A47 /* ViewController.swift in Sources */,
-				605DD8161EFCB93C00186A47 /* Game.swift in Sources */,
 				605DD8071EFCB93500186A47 /* AppDelegate.swift in Sources */,
+				6098939B1F04AE3B0087C83C /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,7 +538,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6098939A1F04AE150087C83C /* Player.swift in Sources */,
 				60E838351EFE0B87005F9435 /* ViewController.swift in Sources */,
+				609893991F04AE150087C83C /* Game.swift in Sources */,
 				60E838331EFE0B87005F9435 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1318,6 +1322,7 @@
 				60E8383D1EFE0B87005F9435 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

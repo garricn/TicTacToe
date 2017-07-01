@@ -9,7 +9,6 @@
 import WatchKit
 import Foundation
 
-
 final class InterfaceController: WKInterfaceController {
 
     @IBOutlet private var button1: WKInterfaceButton!
@@ -71,7 +70,13 @@ final class InterfaceController: WKInterfaceController {
     }
 
     private func didTap(positionButton: PositionButton) {
-        game.register(selected: positionButton.tag)
+        let position = positionButton.tag
+
+        guard game.openPositions.contains(position) else {
+            return
+        }
+
+        game.register(selected: position)
         setTitle(for: positionButton)
 
         switch game.evaluateResult(for: game.currentPlayer) {
@@ -149,5 +154,4 @@ final class InterfaceController: WKInterfaceController {
         refresh()
         enableButtons()
     }
-
 }

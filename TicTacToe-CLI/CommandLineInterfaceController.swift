@@ -67,10 +67,8 @@ final class CommandLineInterfaceController {
             game.startNextMove()
         }
 
-        defer {
-            print(divider)
-            evaluateResult(for: currentPlayer)
-        }
+        print(divider)
+        evaluateResult(for: currentPlayer)
     }
 
     private func askForMove() -> Int {

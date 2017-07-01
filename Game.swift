@@ -63,28 +63,23 @@ class Game {
     }
 
     func evaluateResult(for player: Player) -> Game.Result {
-        let possibeWinner: PossibleWins = currentPossibleWins.reduce([]) { (result, tuple) in
+        let possibeWinner: PossibleWins = currentPossibleWins.filter { tuple in
             let playerForMove0 = markedPositions[tuple.0]
             let playerForMove1 = markedPositions[tuple.1]
             let playerForMove2 = markedPositions[tuple.2]
 
-            let matched = [playerForMove0, playerForMove1, playerForMove2].filter({
-                return $0 == player && $0 != Player.notSet
-            }).flatMap({ $0 })
-
-            if matched.count == 3 {
-                return [tuple]
-            } else {
-                return result + []
-            }
+            return playerForMove0 == playerForMove1
+                && playerForMove1 == playerForMove2
+                && playerForMove0 != nil
+                && playerForMove0 != .notSet
         }
 
         if !possibeWinner.isEmpty {
-            return Game.Result.winner(player)
+            return .winner(player)
         }
 
         if currentPossibleWins.isEmpty {
-            return Game.Result.slatemate
+            return .slatemate
         }
 
         if currentPossibleWins.count == 1 {
@@ -92,12 +87,14 @@ class Game {
             let moves = [win.firstMove, win.secondMove, win.thirdMove]
             let players = moves.flatMap { markedPositions[$0] }.filter { $0 != .notSet }
 
-            if players.count == 2, players[0] != players[1] || players[0] != currentPlayer.swapped {
-                return Game.Result.slatemate
+            if players.count == 2,
+                players[0] != players[1]
+                    || players[0] != currentPlayer.swapped {
+                return .slatemate
             }
         }
 
-        return Game.Result.onGoing
+        return .onGoing
     }
 
     enum Result: Equatable {
